@@ -19,21 +19,21 @@ function setColorPickerEventListeners(elements, colors, pickerElements) {
         let red = colors.red.value;
         let green = colors.green.value;
         let blue = colors.blue.value;
-        setElementBGColor(element, red, green, blue);
-        setDisplayValues(red, green, blue);
+        setBoxRBGColor(elements, red, green, blue);
         });
     }
 }
 
-function setColor(colorBox, red, green, blue) {
+function setBoxRBGColor(colorBox, red, green, blue) {
     let rgbVal = [red, green, blue].join(',');
-    BGElement.style.backgroundColor = "rgb(" + rgbVal + ")";
+    colorBox.style.backgroundColor = "rgb(" + rgbVal + ")";
+    setDisplayValues(red, green, blue);
 }
 
 function setDisplayValues(red, green, blue) {
-    let redVal = document.getElementById("red-val");
-    let greenVal = document.getElementById("green-val");
-    let blueVal = document.getElementById("blue-val");
+    let redVal = document.getElementById("red-Val");
+    let greenVal = document.getElementById("green-Val");
+    let blueVal = document.getElementById("blue-Val");
 
     redVal.innerText = red;
     greenVal.innerText = green;
